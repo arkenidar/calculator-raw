@@ -3,6 +3,7 @@ var formula="2+11*2" // (2+11)*2 // 2+(11*2)
 //calculate(formula)
 calculate("-31*2")
 
+console.log("TEST #0",calculate("123")==123)
 console.log("TEST #1",calculate("-31*2")==-62)
 console.log("TEST #2",calculate("-31*(-2)")==62) // TO DO: handle parenthesis
 
@@ -26,6 +27,7 @@ for(var i in formula){
         digits=""
 
         console.log(value,"value!") // !!!
+        returned=value
         
         if(operand!=null){
             if(operator=="+"){
