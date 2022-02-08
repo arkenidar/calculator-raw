@@ -21,7 +21,7 @@ for(var i in formula){
     if(numeric(char)){
         digits+=char
     }
-    if(!numeric(char) || i==(formula.length-1)){
+    if(!numeric(char) || i==last(formula)){
         value=parseInt(digits)
         digits=""
 
@@ -53,5 +53,8 @@ for(var i in formula){
 return returned
 function numeric(char){
     return char>="0" && char<="9"
+}
+function last(sequence){
+    return sequence.length-1
 }
 }
