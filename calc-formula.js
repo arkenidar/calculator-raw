@@ -3,6 +3,7 @@ var formula="2+11*2" // (2+11)*2 // 2+(11*2)
 //calculate(formula)
 calculate("-31*2")
 function calculate(formula){
+var returned
 console.log("formula:",formula)
 
 var digits=""
@@ -33,6 +34,7 @@ for(var i in formula){
             operand=null
         
             console.log("calc!",value)
+            returned=value
         }
 
         if(char=="+" || char=="*"){
@@ -44,7 +46,7 @@ for(var i in formula){
         }
     }
 }
-
+return returned
 function numeric(char){
     return char>="0" && char<="9"
 }
