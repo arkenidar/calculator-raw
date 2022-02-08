@@ -1,5 +1,7 @@
 // simple formula calculator (not full featured)
 var formula="2+11*2" // (2+11)*2 // 2+(11*2)
+calculate(formula)
+function calculate(formula){
 console.log("formula:",formula)
 
 var digits=""
@@ -39,4 +41,5 @@ for(var i in formula){
 
 function numeric(char){
     return char>="0" && char<="9"
+}
 }
