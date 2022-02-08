@@ -1,6 +1,7 @@
 // simple formula calculator (not full featured)
 var formula="2+11*2" // (2+11)*2 // 2+(11*2)
-calculate(formula)
+//calculate(formula)
+calculate("-31*2")
 function calculate(formula){
 console.log("formula:",formula)
 
@@ -26,6 +27,8 @@ for(var i in formula){
                 value=operand+value
             }else if(operator=="*"){
                 value=operand*value
+            }else if(operator=="-"){
+                value=operand-value
             }
             operand=null
         
@@ -35,6 +38,9 @@ for(var i in formula){
         if(char=="+" || char=="*"){
             operator=char
             operand=value
+        }else if(char=="-"){
+            operator=char
+            operand=(operand!=null)?value:0
         }
     }
 }
