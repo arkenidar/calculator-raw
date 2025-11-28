@@ -17,6 +17,33 @@
     otherwise use this GUI to enter formulas: <br>
     <div id="result"></div>
     <input oninput="document.all.result.innerText=calculate(this.value)">
+
+    <hr>
+    <div>
+        <h3>About</h3>
+        This is a simple JavaScript formula calculator that can evaluate mathematical expressions given as strings. It
+        supports basic arithmetic operations such as addition, subtraction, multiplication, and division, as well as
+        parentheses for grouping. The calculator follows the standard order of operations (PEMDAS/BODMAS) to ensure
+        accurate results.
+        <br><br>
+        The core function, `calculate(formula)`, takes a string input representing the mathematical expression and
+        returns the computed result. It handles various edge cases, including negative numbers and nested parentheses.
+        <br><br>
+        This tool can be useful for quick calculations directly in the browser without needing to rely on external
+        calculators or software.
+    </div>
+    <hr>
+    <div>
+        <h3>Source Code</h3>
+        <pre><code id="source_code"></code></pre>
+        <script>
+            fetch('calc-formula.js')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('source_code').innerText = data;
+                });
+        </script>
+    </div>
 </body>
 
 </html>
