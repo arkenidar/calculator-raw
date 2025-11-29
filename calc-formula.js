@@ -7,6 +7,7 @@ console.log("TEST #3", calculate("1-(2+3+6)") == -10) // WORKS!
 console.log("TEST #4", calculate("-(2+3+6)") == -11) // WORKS!
 console.log("TEST #5", calculate("10+(2*(1+2)+3)") == 19) // WORKS!
 console.log("TEST #6", calculate("5/2") == 2.5) // division
+console.log("TEST #7", calculate("2^3") == 8) // exponentiation
 
 function calculate(formula) {
     console.log("!formula:", formula)
@@ -71,6 +72,8 @@ function calculate(formula) {
                         value = operand - value
                     } else if (operator == "/") {
                         value = operand / value
+                    } else if (operator == "^") {
+                        value = Math.pow(operand, value)
                     }
                     operand = null
                 }
@@ -98,7 +101,7 @@ function calculate(formula) {
         return sequence.length - 1
     }
     function is_operator(char) {
-        return char == "+" || char == "*" || char == "-" || char == "/"
+        return char == "+" || char == "*" || char == "-" || char == "/" || char == "^"
     }
 
 } //- function
