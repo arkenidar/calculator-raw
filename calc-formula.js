@@ -1,4 +1,7 @@
 // simple formula calculator (not full-featured, but it does pass some tests)
+// JS <-> Java sync:
+// - keep calculate() logic equivalent to Calculator.calculate()
+// - keep the test list in sync with Calculator.main()
 
 console.log("TEST #0", calculate("123") == 123) // WORKS!
 console.log("TEST #1", calculate("-31*2") == -62) // WORKS!
@@ -105,3 +108,6 @@ function calculate(formula) {
     }
 
 } //- function
+
+// Java port (kept in sync with this file):
+// https://github.com/arkenidar/java-console-calculator
