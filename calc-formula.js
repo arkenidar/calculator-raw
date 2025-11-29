@@ -28,9 +28,9 @@ function calculate(formula) {
         }
 
         var char = formula[i]
-        console.log(char, numeric(char), "char debug")
+        console.log(char, numeric(char) || char == ".", "char debug")
 
-        if (numeric(char)) {
+        if (numeric(char) || char == ".") {
             digits += char
         }
 
@@ -53,7 +53,7 @@ function calculate(formula) {
                 operand = oper_last().operand
 
                 if (digits != "") {
-                    value = parseInt(digits)
+                    value = parseFloat(digits)
                     digits = ""
                 }
 
